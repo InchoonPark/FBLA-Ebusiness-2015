@@ -1,0 +1,68 @@
+<template name="Header">
+  <div class="header-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-8">
+          <div class="header-right">
+            <div class="user-menu">
+              <ul>
+                <li><a href="{{pathFor route='Cart'}}"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
+                {{#if currentUser}}
+                <li><a href="#" id="logout"><i class="fa fa-user"></i> Logout</a></li>
+                {{else}}
+                <li><a href="{{pathFor route='atSignIn'}}"><i class="fa fa-sign-in"></i> Login</a></li>
+                <li><a href="{{pathFor route='atSignUp'}}"><i class="fa fa-user"></i> Register</a></li>
+                {{/if}}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-branding-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="logo">
+            <h1><a href="{{pathFor route='Home'}}">SKETCHCEPTION</a></h1>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="shopping-item">
+            <a href="{{pathFor route='Cart'}}">Cart - <span class="cart-amunt">${{price}}</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">{{count}}</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="mainmenu-area">
+    <div class="container">
+      <div class="row">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div> 
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="{{pathFor route='Home'}}">Home</a></li>
+            <li><a href="{{pathFor route='Necklaces'}}">Necklaces</a></li>
+            <li><a href="{{pathFor 'Earrings'}}">Earrings</a></li>
+            <li><a href="{{pathFor 'Rings'}}">Rings</a></li>
+            <li><a href="{{pathFor 'Pottery'}}">Pottery</a></li>
+            <li><a href="{{pathFor 'Paintings'}}">Paintings</a></li>
+            <li><a href="{{pathFor 'Sculptures'}}">Sculptures</a></li>
+            <li><a href="{{pathFor 'About'}}">About us</a></li>
+          </ul>
+        </div>  
+      </div>
+    </div>
+  </div> <!-- End mainmenu area -->
+</template>

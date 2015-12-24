@@ -1,0 +1,116 @@
+<template name="Home">
+  <div class="slider-area">
+    <div class="zigzag-bottom"></div>
+    <div id="slide-list" class="carousel carousel-fade slide" data-ride="carousel">
+      <div class="slide-bulletz">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <ol class="carousel-indicators slide-indicators">
+                <li data-target="#slide-list" data-slide-to="0" class="active"></li>
+                <li data-target="#slide-list" data-slide-to="1"></li>
+                <li data-target="#slide-list" data-slide-to="2"></li>
+              </ol>                            
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <div class="single-slide">
+            <div class="slide-bg slide-one"></div>
+            <div class="slide-text-wrapper">
+              <div class="slide-text">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6 col-md-offset-6">
+                      <div class="slide-content">
+                        <h2>Welcome!</h2>
+                        <p>Browse through our selection of artwork including jewelry, pottery, paintings, and sculptures!</p>
+                        <a href="{{pathFor 'Pottery'}}" class="readmore">Learn more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="single-slide">
+            <div class="slide-bg slide-two"></div>
+            <div class="slide-text-wrapper">
+              <div class="slide-text">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6 col-md-offset-6">
+                      <div class="slide-content">
+                        <h2>Paintings</h2>
+                        <p>We offer various genres of paintings ranging from romantic to contemporary. Visit our paintings tab to find the amazing products presented.</p>
+                        <a href="{{pathFor 'Paintings'}}" class="readmore">shop now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="single-slide">
+            <div class="slide-bg slide-three"></div>
+            <div class="slide-text-wrapper">
+              <div class="slide-text">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6 col-md-offset-6">
+                      <div class="slide-content">
+                        <h2>Register</h2>
+                        <p>Register today to make an account with Sketchception. You will be able to use the shopping cart, browse and save products you wish to purchase.</p>
+                        <a href="{{pathFor 'atSignUp'}}" class="readmore">Register</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>        
+  </div> <!-- End slider area -->
+
+  <div class="maincontent-area" style="margin-top: 40px">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="latest-product">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-carousel owl-carousel">
+              {{#each products}}
+                <div class="single-product">
+                  <div class="product-f-image">
+                    <div class="product-page-image">
+                      <img src="../products/{{photoname}}.jpg" alt="{{name}}">
+                    </div>                    
+                    <div class="product-hover">
+                      <a class="add-to-cart-link add-to-cart-button"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                      <a href="{{pathFor 'single.product' _urlName=this.urlName}}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                    </div>
+                  </div>
+
+                  <h2><a href="{{pathFor 'single.product' _urlName=this.urlName}}">{{name}}</a></h2>
+
+                  <div class="product-carousel-price">
+                    <ins>${{price}}</ins>
+                  </div> 
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+      </div> <!-- End main content area -->
+      </div>
+  </template>

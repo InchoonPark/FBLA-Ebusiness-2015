@@ -1,0 +1,80 @@
+<template name="Footer">
+  <div class="footer-top-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="footer-about-us">
+            <h2>SKETCHCEPTION</h2>
+            <p>Sketchception has accounts on Facebook, Twitter, and Instagram! Follow us to receive updates!</p>
+            <div class="footer-social">
+               <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/pages/Sketchception/931641976870809">
+                <i class="fa fa-facebook"></i>
+              </a>
+              <a class="btn btn-social-icon btn-twitter" href="https://twitter.com/Sketchception">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a class="btn btn-social-icon btn-instagram" href="http://instagram.com/sketchception">
+                <i class="fa fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="footer-menu">
+            <h2 class="footer-wid-title">More Information</h2>
+            <ul>
+              <li><a href="{{pathFor route='About'}}">About</a></li>
+              <li><a href="{{pathFor route='Contact'}}">Contact</a></li>
+              <li><a href="{{pathFor route='Faqs'}}">Faqs</a></li>
+              <li><a href="{{pathFor route='Guarantee'}}">Guarantee</a></li>
+              <li><a href="{{pathFor route='Mission'}}">Mission</a></li>
+              <li><a href="{{pathFor route='Shipping'}}">Shipping</a></li>
+              <li><a href="{{pathFor route='Copyright'}}">Copyright Information</a></li>
+            </ul>                        
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="footer-menu">
+            <h2 class="footer-wid-title">Categories</h2>
+            <ul>
+              <li><a href="{{pathFor route='Necklaces'}}">Necklaces</a></li>
+              <li><a href="{{pathFor 'Earrings'}}">Earrings</a></li>
+              <li><a href="{{pathFor 'Rings'}}">Rings</a></li>
+              <li><a href="{{pathFor 'Pottery'}}">Pottery</a></li>
+              <li><a href="{{pathFor 'Paintings'}}">Paintings</a></li>
+              <li><a href="{{pathFor 'Sculptures'}}">Sculptures</a></li>
+            </ul>                        
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="footer-newsletter">
+            <h2 class="footer-wid-title">Newsletter</h2>
+            <p>Sign up for Sketchception's newsletter and receive deals you won't find anywhere else in your inbox!</p>
+            <div class="newsletter-form">
+              <form action="#">
+                <input type="email" placeholder="Type your email">
+                <input type="submit" value="Subscribe">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- End footer top area -->
+
+  <div class="footer-bottom-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="copyright">
+            <p>© All rights reserved | Sketchception 2015 | Took inspiration from the <a href="http://demos.wpexpand.com/wordpress/eElectronics/">e-Electronics theme</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- End footer bottom area -->
+</template>

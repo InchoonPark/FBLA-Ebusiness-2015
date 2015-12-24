@@ -1,0 +1,127 @@
+<template name="SketchceptionCartItems">
+  <div class="product-big-title-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="product-bit-title text-center">
+            <h2>Cart</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+      <div class="shoppingcart">
+        <div class="row">
+          <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <div class="alert alert-danger" role="alert" style="display: none">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Error:</span>
+              Please fill out all the necessary shipping information before ordering on Sketchception
+            </div>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th></th>
+                  <th class="text-center">Name</th>
+                  <th class="text-center">Price</th>
+                  <th> </th>
+                </tr>
+              </thead>
+              <tbody> 
+                {{#each items}}
+                {{>SketchceptionCartItem}}
+                {{/each}}
+                <tr>
+                  <td>   </td>
+                  <td>   </td>
+                  <td>   </td>
+                  <td><h3>Total</h3></td>
+                  <td class="text-right"><h3><strong>${{sketchceptionItemTotal}}</strong></h3></td>
+                </tr>
+              </tbody>
+            </table>
+            {{#if cartIsNotEmpty}}
+            <form class="form-horizontal" role="form">
+              <fieldset>
+                <legend>Address Details</legend>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label" for="textinput">Line 1</label>
+                  <div class="col-sm-10">
+                    <input type="text" placeholder="Address Line 1" class="form-control" name="address">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label" for="textinput">Line 2 (Optional)</label>
+                  <div class="col-sm-10">
+                    <input type="text" placeholder="Address Line 2" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label" for="textinput">City</label>
+                  <div class="col-sm-10">
+                    <input type="text" placeholder="City" class="form-control" name="city">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label" for="textinput">State</label>
+                  <div class="col-sm-4">
+                    <input type="text" placeholder="State" class="form-control" name="state">
+                  </div>
+                  <label class="col-sm-2 control-label" for="textinput">Postcode</label>
+                  <div class="col-sm-4">
+                    <input type="text" placeholder="Post Code" class="form-control" name="postcode">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label" for="textinput">Country</label>
+                  <div class="col-sm-10">
+                    <input type="text" placeholder="Country" class="form-control" name="country">
+                  </div>
+                  </div>
+              </fieldset>
+            </form>
+            <div class="row">
+            <div class="col-md-offset-8 col-md-4">
+            <button type="button" class="btn btn-default" onclick="history.go(-1);">
+              <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+            </button>
+              {{>SketchceptionCartPayNow}}
+            </div>
+            <div class="col-md-offset-8 col-md-4">
+              Use credit card number 4242 4242 4242 4242 in testing mode. Credit verification code and expiration dates can be random.
+              </div>
+            </div>
+            {{else}}
+              <h4>There appears to be nothing in your cart. Click <a href="{{pathFor route='Home'}}">here</a> to get started!</h4>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="SketchceptionCartItem">
+  <tr>
+    <td class="col-sm-8 col-md-6">
+      <img width="150" height="150" class="media-object" src="/products/{{photoname}}.jpg" >     
+    </td>
+    <td class="col-sm-3 col-md-1"></td>
+    <td class="col-sm-1 col-md-1 text-center"><strong>{{name}}</strong></td>
+    <td class="col-sm-1 col-md-1 text-center"><strong>${{price}}</strong></td>
+    <td class="col-sm-1 col-md-1">
+    <button type="button" class="btn btn-danger" id="remove-button">
+      <span class="glyphicon glyphicon-remove"></span> Remove
+    </button></td>
+  </tr>
+</template>
+
+<template name="SketchceptionCartPayNow">
+  <button type="button" class="btn product_button checkout-button" id="pay-now" style="display: none">
+    Checkout <span class="glyphicon glyphicon-play"></span>
+  </button>
+</template>

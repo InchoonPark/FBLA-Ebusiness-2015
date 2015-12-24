@@ -1,0 +1,28 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+insecure
+iron:router
+natestrauser:font-awesome
+richsilv:owl-carousel
+mizzao:bootstrap-3
+bambattajb:sticky
+accounts-password
+useraccounts:bootstrap
+gwendall:underscore-helper
+andrei:autoform-raty
+mrt:jquery-raty
+jeffpatzer:jquery-payment
+pahans:reactive-modal
+amplify
+natestrauser:cart
+matb33:collection-hooks
+barbatus:stars-rating
+edgee:meteor-server-deps
+lepozepo:reactive-publish
+reywood:publish-composite
+okgrow:iron-router-autoscroll

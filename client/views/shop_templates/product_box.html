@@ -1,0 +1,18 @@
+<template name="ProductBox">
+  <div class="col-md-3 col-sm-6">
+    <div class="single-shop-product">
+      <div class="product-page-image">
+        <img src="../products/{{photoname}}.jpg" alt="{{name}}">
+      </div>
+      <h2><a href="{{pathFor 'single.product' _urlName=this.urlName}}">{{name}}</a></h2>
+      <div class="product-carousel-price">
+        <ins>${{price}}</ins>
+      </div>
+      {{> starsRating rating=rating size='sm'}}
+      <div class="product-option-shop">
+        <button class="product_button add-to-cart-button">Add to cart</button>
+        <button class="product_button" id="more_details_button">More details</button>
+      </div>                       
+    </div>
+  </div>
+</template>
